@@ -1,6 +1,6 @@
 {
     "name": "@nebulaglitch/gcode",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A library to generate gcode output",
     "main": "dist/index.cjs",
     "module": "dist/index.js",
