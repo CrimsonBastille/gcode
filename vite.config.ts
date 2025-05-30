@@ -72,16 +72,27 @@ export default defineConfig({
         outDir: 'dist',
         lib: {
             entry: './src/index.ts',
-            formats: ['es'],
+            formats: ['es', 'cjs'],
+            fileName: (format) => format === 'es' ? 'index.js' : 'index.cjs'
         },
         rollupOptions: {
-            input: 'src/index.ts',
-            output: {
-                format: 'esm',
-                entryFileNames: '[name].js',
-                preserveModules: true,
-                exports: 'named',
-            },
+            external: ['numeral'],
+            output: [
+                {
+                    format: 'es',
+                    preserveModules: true,
+                    preserveModulesRoot: 'src',
+                    entryFileNames: '[name].js',
+                    exports: 'named'
+                },
+                {
+                    format: 'cjs',
+                    preserveModules: true,
+                    preserveModulesRoot: 'src',
+                    entryFileNames: '[name].cjs',
+                    exports: 'named'
+                }
+            ],
             plugins: [
                 shebang({
                     shebang: '#!/usr/bin/env node',
