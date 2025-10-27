@@ -63,7 +63,7 @@
         "@types/numeral": "^2.0.5",
         "@typescript-eslint/eslint-plugin": "^8.33.0",
         "@typescript-eslint/parser": "^8.33.0",
-        "@vitest/coverage-v8": "^3.1.4",
+        "@vitest/coverage-v8": "^4.0.4",
         "eslint": "^9.27.0",
         "eslint-plugin-import": "^2.31.0",
         "globals": "^16.2.0",
